@@ -1,0 +1,20 @@
+<section class="section">
+  <h2>Add New Expense</h2>
+  <%= form_with model: @expense, url: category_expenses_path, class: 'mt-4' do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, autofocus: true, class: 'form-control', required: true %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :amount, class: 'form-label' %>
+      <%= form.number_field :amount, autofocus: true, step: '0.01', class: 'form-control', required: true %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :category, class: 'form-label' %>
+      <%= select_tag :category, options_for_select(@categories.map { |category| [category.name, category.id] }), 
+      { prompt: 'Select Category', required: true, class: 'form-select' } %>
+    </div>
+
+    <%= form.submit "Add Expense", class: "btn btn-primary" %>
+  <% end %>
+</section>

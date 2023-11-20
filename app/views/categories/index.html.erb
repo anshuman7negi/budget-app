@@ -1,1 +1,27 @@
-<h1>this is category</h1>
+<div class="container mt-4">
+  <h2 class="mb-4">All Categories</h2>
+  <% if @categories.empty? %>
+    <p class="alert alert-info"><span>No Category Found</span></p>
+  <% else %>
+    <ul class="list-group gap-3" style="height: 75vh; overflow-y: auto;">
+      <% @categories.each do |category| %>
+        <li class="list-group-item category-card d-flex align-items-center gap-3", style="box-shadow: 0px 0px 3px;">
+          <%= image_tag "#{category.icon}", class: 'category-img mr-3', alt: "#{category.name}", width: 50 %>
+          <div class="category-details">
+            <div>
+            <%= link_to category_path(category.id), class: 'text-decoration-none' do %>
+              <p class="mb-1"><%= category.name %></p>
+              <% @total = 0 %>
+            <% end %>
+            </div>
+            <p class="small text-muted"><%= category.created_at.strftime("%h-%d, %Y [%I : %M : %S %p]") %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<footer class="mt-4" style="background-color: #5fb523; padding: 10px;">
+  <%= link_to "Add category", new_category_path, class: 'btn btn-primary btn-block', style: 'background-color: #5fb523; border: 1px solid #fff; width: 100%;' %>
+</footer>
