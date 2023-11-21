@@ -16,7 +16,6 @@ RSpec.feature 'Expense Form', type: :feature do
 
   scenario 'can see the form label : NAME' do
     visit new_category_expense_path(@category)
-    save_and_open_page
     expect(page).to have_content('Name')
   end
 
