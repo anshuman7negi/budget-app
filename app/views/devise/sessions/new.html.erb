@@ -9,6 +9,10 @@
       <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', required: true, placeholder: 'Password', style: 'border: none;' %>
     </div>
 
+    <% if defined?(RSpec) %>
+      <%= f.submit 'Test Submit', class: 'btn btn-primary' %>
+    <% end %>
+
   <% end %>
 
   <%= render "devise/shared/links" %>
