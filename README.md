@@ -24,18 +24,17 @@
 
 > A budgeting app is a software application that you may access from your computer, tablet or mobile device to track your finances, such as income, savings, debt payoff, or investing. Budgeting apps often will sync with your financial accounts to give you an overview in real-time when finances change.
 
-**[Budget App]** is a ruby website.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Budget App is backend project
 
 <details>
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
@@ -104,10 +103,6 @@ Install this project with:
 To run tests, run the following command:
 
 `rubocop`
-
-OR
-
-`rubocop -a` 
 
 **it will automatically correct the errors**
 
