@@ -3,11 +3,12 @@ require 'rails_helper'
 
 RSpec.feature 'Expense Form', type: :feature do
   before(:each) do
-    @user = User.create!(name: 'first user', email: 'user@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+    @user = User.create!(name: 'first user', email: 'user@gmail.com', password: 'topsecret',
+                         password_confirmation: 'topsecret')
     @category = Category.create!(name: 'Groceries', icon: 'stack-of-books', author: @user)
     @categories = [@category]
     @expense = Expense.new(name: 'Test Expense', amount: 50.0, author: @user)
-    
+
     visit new_user_session_path
     fill_in 'Email', with: 'user@gmail.com'
     fill_in 'Password', with: 'topsecret'
@@ -28,5 +29,4 @@ RSpec.feature 'Expense Form', type: :feature do
     visit new_category_expense_path(@category)
     expect(page).to have_content('Category')
   end
-
 end

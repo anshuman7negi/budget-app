@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
-
   before(:each) do
     @user = User.new(name: 'first user')
     @expense = Expense.new(name: 'Groceries', amount: 50.0, author: @user)

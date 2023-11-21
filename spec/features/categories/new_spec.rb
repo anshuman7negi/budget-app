@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Add New Category Page', type: :feature do
   before(:each) do
-    @user = User.create!(name: 'first user', email: 'user@gmail.com', password: 'topsecret', password_confirmation: 'topsecret')
+    @user = User.create!(name: 'first user', email: 'user@gmail.com', password: 'topsecret',
+                         password_confirmation: 'topsecret')
     visit new_user_session_path
     fill_in 'Email', with: 'user@gmail.com'
     fill_in 'Password', with: 'topsecret'
@@ -27,5 +28,4 @@ RSpec.feature 'Add New Category Page', type: :feature do
     click_on 'Add Category'
     expect(page).to have_current_path(categories_path)
   end
-
 end

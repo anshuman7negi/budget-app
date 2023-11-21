@@ -9,5 +9,4 @@ RSpec.feature 'Splash Page', type: :feature do
     expect(page).to have_link('Log In', href: new_user_session_path, class: 'btn btn-light splash-btn btn-block')
     expect(page).to have_link('Sign Up', href: new_user_registration_path, class: 'btn btn-light splash-btn btn-block')
   end
-
 end
