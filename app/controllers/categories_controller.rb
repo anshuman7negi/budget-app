@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
     @category_expense = ExpenseCategory.includes(:expense).where(category: @category).order(created_at: :desc)
     @total_amt = @category_expense.reduce(0) { |sum, obj| sum + obj.expense.amount }
   end
-  
+
   def new
     @category = Category.new
   end
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
   end
 
   private
-  
+
   def category_params
     params.require(:category).permit(:name, :icon)
   end
