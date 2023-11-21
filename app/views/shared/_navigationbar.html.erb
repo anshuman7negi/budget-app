@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3778c2;">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <%= image_tag('arrow-left.svg', class: 'img-fluid', alt: 'Back', style: 'cursor: pointer; width:22px; filter: invert(1);', onclick: 'history.go(-1);') %>
+
+    <% if current_user %>
+      <h1 class="navbar-brand text-white" style="margin: 0;">
+        <% if controller_name == 'categories' %>
+          Groups
+        <% elsif controller_name == 'expenses' %>
+          Transactions
+        <%end%>
+      </h1>
+      <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light' %>
+    <% else%>
+       <h1 class="navbar-brand text-white" style="margin: 0;">
+       <% if controller_name == 'sessions' && action_name == 'new' %>
+          LOGIN
+       <% elsif controller_name == 'registrations' && action_name == 'new' %>
+          REGISTER
+        <% end %>
+      </h1>
+      <% if controller_name == 'sessions' && action_name == 'new' %>
+          <button id="loginFormSubmitBtn" class="btn text-white">Login</button>
+      <% elsif controller_name == 'registrations' && action_name == 'new' %>
+         <button id="SignupFormSubmitBtn" class="btn text-white">signup</button>
+      <%end%>
+    <% end %>
+  </div>
+</nav>
