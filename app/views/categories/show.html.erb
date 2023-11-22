@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <ul class="list-group" style="height: 75vh; overflow-y: auto; padding-top: 1rem;">
+  <ul class="list-group" style="height: 50vh; overflow-y: auto; padding-top: 1rem;">
     <% @category_expense.each do |cat_exp| %>
       <li class="list-group-item category-card d-flex flex-column gap-2" style="border: none; border-bottom: 2px solid; color: #434b54;">
         <div class="d-flex justify-content-between">
@@ -29,7 +29,7 @@
     <% end %>
   </ul>
 
-  <div class="total-amount--wrapper">
+  <div class="total-amount--wrapper d-flex gap-2">
     <p class="text" style="color: #434b54;">Total Amount</p>
     <p class="amount" style="color: #434b54;">$<%= @total_amt %></p>
   </div>
