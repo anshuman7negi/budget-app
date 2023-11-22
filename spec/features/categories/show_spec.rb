@@ -4,7 +4,7 @@ RSpec.feature 'Category Show Page', type: :feature do
   before(:each) do
     @user = User.create!(name: 'first user', email: 'user@gmail.com', password: 'topsecret',
                          password_confirmation: 'topsecret')
-    @category = Category.create(name: 'Groceries', icon: 'stack-of-books', author: @user)
+    @category = Category.create(name: 'Groceries', icon: 'stack-of-books.png', author: @user)
     @expense1 = Expense.create(name: 'Expense 1', amount: 10, author: @user)
     ExpenseCategory.create(expense: @expense1, category: @category)
     @expense2 = Expense.create(name: 'Expense 2', amount: 20, author: @user)

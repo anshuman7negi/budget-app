@@ -17,7 +17,7 @@ RSpec.feature 'Categories Index Page', type: :feature do
   end
 
   scenario 'displays categories with details when they exist' do
-    category = Category.create(name: 'Groceries', icon: 'stack-of-books', author: @user)
+    category = Category.create(name: 'Groceries', icon: 'stack-of-books.png', author: @user)
     visit categories_path
     expect(page).to have_selector('.category-card', text: category.name.capitalize)
     expect(page).to have_link(category.name.capitalize, href: category_path(category))

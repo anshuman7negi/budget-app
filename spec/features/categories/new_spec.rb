@@ -16,15 +16,14 @@ RSpec.feature 'Add New Category Page', type: :feature do
     expect(page).to have_selector('form[action="/categories"][method="post"]')
 
     expect(page).to have_field('category_name')
-    expect(page).to have_field('category_icon')
-
+    expect(page).to have_selector('ul.list-unstyled')
     expect(page).to have_button('Add Category')
   end
 
   scenario 'successfully adds a new category' do
     visit new_category_path
-    fill_in 'category_name', with: 'Groceries'
-    fill_in 'category_icon', with: 'stack-of-books'
+    fill_in 'category[name]', with: 'Groceries'
+    find('input[value="icon/stack-of-books.png"]').click
     click_on 'Add Category'
     expect(page).to have_current_path(categories_path)
   end

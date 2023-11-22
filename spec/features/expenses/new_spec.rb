@@ -5,7 +5,7 @@ RSpec.feature 'Expense Form', type: :feature do
   before(:each) do
     @user = User.create!(name: 'first user', email: 'user@gmail.com', password: 'topsecret',
                          password_confirmation: 'topsecret')
-    @category = Category.create!(name: 'Groceries', icon: 'stack-of-books', author: @user)
+    @category = Category.create!(name: 'Groceries', icon: 'stack-of-books.png', author: @user)
     @categories = [@category]
     @expense = Expense.new(name: 'Test Expense', amount: 50.0, author: @user)
 
