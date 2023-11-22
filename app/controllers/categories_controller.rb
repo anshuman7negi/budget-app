@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @icons = Dir.entries('app/assets/images/icon').select { |icon| icon != '.' and icon != '..' }
   end
 
   def create
