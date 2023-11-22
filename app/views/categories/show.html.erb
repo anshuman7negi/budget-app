@@ -1,0 +1,40 @@
+<section class="container mt-4">
+  <div class="container-list">
+    <div class="list-group-item category-card d-flex align-items-center gap-3">
+      <%= image_tag "#{@category.icon}", class: 'category-img mr-3', alt: "#{@category.name}", width: 50 %>
+      <div class="category-details pl-2" style="width: 100%;">
+        <div class="d-flex justify-content-between">
+          <p class="mb-1" style="color: #434b54;"><%= @category.name %></p>
+          <p class="category-amount" style="color: #434b54;">$<%= @total_amt %></p>
+        </div>
+        <p class="small text-muted" style="color: #434b54;"><%= @category.created_at.strftime("%Y-%m-%d") %></p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group" style="height: 50vh; overflow-y: auto; padding-top: 1rem;">
+    <% @category_expense.each do |cat_exp| %>
+      <li class="list-group-item category-card d-flex flex-column gap-2" style="border: none; border-bottom: 2px solid; color: #434b54;">
+        <div class="d-flex justify-content-between">
+         <p class="transaction-name" style="color: #434b54;"><%= cat_exp.expense.name %></p>
+         <p class="transaction-amt" style="color: #434b54;">$<%= cat_exp.expense.amount %></p>
+        </div>
+        <div class="d-flex">
+          <p class="date month" style="color: #434b54;"><%= cat_exp.created_at.strftime("%h") %>-</p>
+          <p class="date day" style="color: #434b54;"><%= cat_exp.created_at.strftime("%d") %>-</p>
+          <p class="date year" style="color: #434b54;"><%= cat_exp.created_at.strftime("%Y") %>/</p>
+          <p class="transaction-time" style="color: #434b54;"><i class="fa-regular fa-clock"></i> <%= cat_exp.created_at.strftime("%I:%M:%S %p") %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="total-amount--wrapper d-flex gap-2">
+    <p class="text" style="color: #434b54;">Total Amount</p>
+    <p class="amount" style="color: #434b54;">$<%= @total_amt %></p>
+  </div>
+</section>
+
+<footer class="mt-4" style="background-color: #5fb523; padding: 10px;">
+  <%= link_to "Add new transaction", new_category_expense_path(@category.id), class: 'btn btn-primary btn-block', style: 'background-color: #5fb523; border: 1px solid #fff; width: 100%; color: #434b54;' %>
+</footer>
