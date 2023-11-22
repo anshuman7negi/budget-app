@@ -7,10 +7,17 @@
       <%= f.text_field :name, class: "form-control", required: true %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :icon, class: "form-label" %>
-      <%= f.text_field :icon, class: "form-control", required: true %>
-    </div>
+    <%= f.label :icon, class: 'f-label icon' %>
+    <ul class="d-flex flex-wrap list-unstyled">
+      <% @icons.each do |icon| %>
+        <li class="icon-list">
+          <label class='icon-label'>
+            <%= f.radio_button :icon, "icon/#{icon}", autofocus: true, required: true %>
+            <%= image_tag "icon/#{icon}", width: 50 %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
 
     <%= f.submit "Add Category", class: "btn btn-primary" %>
   <% end %>
