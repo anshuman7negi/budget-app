@@ -55,11 +55,11 @@
 
 > Link to your deployed project.
 
-- [Budget App Live Link](https://budget-app-3o5h.onrender.com/)
+- [Budget App Live Link](https://budget-ydgy.onrender.com)
 
 > Presentation
 
-- [Loom Video]()
+- [Loom Video](https://www.loom.com/share/9947fd594e2f4beb83510cdcd2c12937?sid=7a8e955f-caae-4811-9d14-a68d20860b04)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
