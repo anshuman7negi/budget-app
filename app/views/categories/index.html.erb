@@ -5,9 +5,9 @@
     <ul class="list-group gap-3" style="height: 75vh; overflow-y: auto;">
       <% @categories.each do |category| %>
         <li class="list-group-item category-card d-flex align-items-center gap-3" style="box-shadow: 0px 0px 3px; color: #434b54;">
-          <%= image_tag category.icon.present? ? category.icon : 'suitcase.png', class: 'category-img mr-3', alt: category.name, width: 50 %>
+        <%= puts "Asset Path: #{category.icon}" %>  
+        <%= image_tag category.icon.present? ? category.icon : 'suitcase.png', class: 'category-img mr-3', alt: category.name, width: 50 %>
           <div class="category-details" style="width: 100%;">
-            <%= puts "Asset Path: #{category.icon}" %>
             <%= link_to category_path(category.id), class: 'text-decoration-none d-flex justify-content-between', style:"width: 100%; color: #434b54;" do %>
               <p class="mb-1"><%= category.name.capitalize() %></p>
               <% total_amount = category.expenses.sum(:amount) %>
