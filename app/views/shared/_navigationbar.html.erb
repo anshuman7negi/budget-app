@@ -2,7 +2,7 @@
   <div class="container-fluid d-flex justify-content-between align-items-center">
   
     <% if controller_name == 'categories' %>
-      <%= image_tag('arrow-left.svg', class: 'img-fluid', alt: 'Back', style: 'cursor: pointer; width:22px; filter: invert(1);') %>
+      <%= image_tag('arrow-left.svg', class: 'img-fluid', alt: 'Back', style: 'cursor: pointer; width:22px; filter: invert(1);', onclick: 'window.location.href = "' + categories_path + '";') %>
     <% elsif controller_name == 'expenses' %>
       <%= image_tag('arrow-left.svg', class: 'img-fluid', alt: 'Back', style: 'cursor: pointer; width:22px; filter: invert(1);', onclick: 'window.location.href = "' + categories_path + '";') %>
     <% else %>
