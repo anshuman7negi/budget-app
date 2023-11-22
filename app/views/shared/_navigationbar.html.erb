@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3778c2;">
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <%= image_tag('arrow-left.svg', class: 'img-fluid', alt: 'Back', style: 'cursor: pointer; width:22px; filter: invert(1);', onclick: 'history.go(-1);') %>
+  <%= image_tag('arrow-left.svg', class: 'img-fluid', alt: 'Back', style: 'cursor: pointer; width:22px; filter: invert(1);', onclick: (controller_name == 'expenses' ? 'window.location.href = "' + categories_path + '";' : 'history.go(-1);')) %>
 
     <% if current_user %>
       <h1 class="navbar-brand text-white" style="margin: 0;">
